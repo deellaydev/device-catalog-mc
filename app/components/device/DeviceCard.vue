@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <article class="card">
+  <NuxtLink :to="`/devices/${device.id}`" class="card">
     <div class="image-wrapper">
       <img :src="device.image" :alt="`${device.brand} ${device.model}`" />
 
@@ -79,7 +79,7 @@ defineProps<{
         {{ device.inStock ? 'В наличии' : 'Нет в наличии' }}
       </div>
     </div>
-  </article>
+  </NuxtLink>
 </template>
 
 <style scoped>
@@ -91,6 +91,7 @@ defineProps<{
   border-radius: 16px;
   overflow: hidden;
   transition: transform 0.2s ease;
+  color: var(--color-text);
 }
 
 .card:hover {
